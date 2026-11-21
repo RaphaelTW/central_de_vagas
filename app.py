@@ -224,7 +224,11 @@ def load_public_feed() -> list[dict]:
         return []
 
 
-st.set_page_config(page_title="Central de Vagas", page_icon="assets/central-vagas-logo.png", layout="wide")
+st.set_page_config(
+    page_title="Vagas em São Paulo e Brasil | Central de Vagas",
+    page_icon="assets/central-vagas-logo.png",
+    layout="wide",
+)
 st.html("""
 <style>
 /* Interações visíveis e acessíveis sem alterar a estrutura nativa do Streamlit. */
@@ -292,7 +296,7 @@ DEFAULT_PROFILE = {
 logo_col, title_col = st.columns([1, 12], vertical_alignment="center")
 logo_col.image("assets/central-vagas-logo.png", width=56)
 title_col.title("Central de Vagas")
-st.caption("Encontre oportunidades por perfil — para qualquer área, sem automatizar candidaturas.")
+st.caption("Vagas em São Paulo, no Brasil e remotas: oportunidades organizadas pelo seu perfil, para qualquer área.")
 
 with st.sidebar:
     st.header("Perfil usado pelo agente")
@@ -329,7 +333,9 @@ public_feed = load_public_feed()
 if profile_id and public_feed:
     store_jobs(profile_id, public_feed, profile)
 
-tab_find, tab_board, tab_sources, tab_help = st.tabs(["Agente de vagas", "Vagas encontradas", "Fontes de saúde", "Ajuda simples"])
+tab_find, tab_board, tab_sources, tab_help, tab_support = st.tabs(
+    ["Agente de vagas", "Vagas encontradas", "Fontes de saúde", "Ajuda simples", "Apoie o projeto"]
+)
 
 with tab_find:
     st.subheader("Agente de vagas pronto")
@@ -424,3 +430,19 @@ with tab_help:
 ### Transparência e segurança
 A nota ajuda a organizar a lista: quanto maior, mais palavras da vaga combinam com o perfil. Mesmo as vagas com nota baixa continuam visíveis. O agente não envia currículo nem candidatura; a pessoa decide ao abrir o site original.
 """)
+
+with tab_support:
+    st.subheader("Apoie a Central de Vagas")
+    st.write("Sua doação voluntária ajuda a manter a busca diária, melhorar as fontes de vagas e levar o projeto para novas áreas profissionais.")
+    pix_col, info_col = st.columns([1, 2], vertical_alignment="center")
+    with pix_col:
+        st.image("assets/pix-central-vagas.png", width=240)
+    with info_col:
+        st.markdown("#### Faça um PIX")
+        st.caption("Use a chave abaixo ou escaneie o QR Code. Você escolhe o valor.")
+        st.code("c15b0dc5-808e-4b1b-aa90-6ff25ae1c0d9", language=None)
+        st.caption("Chave PIX aleatória · Central de Vagas")
+        st.info(
+            "Apoio opcional. Nenhuma funcionalidade do sistema depende de doação.",
+            icon=":material/volunteer_activism:",
+        )

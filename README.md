@@ -1,5 +1,7 @@
 # Central de Vagas
 
+Encontre vagas em São Paulo, no Brasil e remotas a partir do perfil profissional. A Central de Vagas organiza oportunidades públicas, destaca as mais compatíveis e permite acompanhar candidaturas sem automatizar envios.
+
 Aplicacao local e multi-perfil para encontrar vagas de acordo com cada pessoa. Ela consulta fontes publicas, calcula uma pontuacao explicavel e mantem o historico separado por perfil.
 
 ## O que faz
