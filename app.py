@@ -53,9 +53,9 @@ def project_version() -> str:
             text=True,
             timeout=2,
         )
-        return result.stdout.strip() or "v1.3.0"
+        return result.stdout.strip() or "v1.3.2"
     except (OSError, subprocess.SubprocessError):
-        return "v1.3.0"
+        return "v1.3.2"
 
 
 def db() -> sqlite3.Connection:
@@ -95,6 +95,13 @@ def save_profile(profile: dict) -> str:
 def get_profiles() -> list[sqlite3.Row]:
     with db() as conn:
         return conn.execute("SELECT * FROM profiles ORDER BY updated_at DESC").fetchall()
+
+
+def delete_profile(profile_id: str) -> None:
+    """Exclui o perfil e os registros de vagas associados neste banco local."""
+    with db() as conn:
+        conn.execute("DELETE FROM jobs WHERE profile_id=?", (profile_id,))
+        conn.execute("DELETE FROM profiles WHERE id=?", (profile_id,))
 
 
 def request_json(url: str, params: dict | None = None) -> dict | list:
@@ -319,7 +326,8 @@ st.caption("Vagas em São Paulo, no Brasil e remotas: oportunidades organizadas 
 
 with st.sidebar:
     st.header("Perfil usado pelo agente")
-    st.caption("Edite apenas se quiser mudar a pessoa ou a área. O perfil da Letícia já está pronto.")
+    st.caption("Selecione um perfil salvo ou preencha e salve o perfil antes de buscar vagas.")
+    st.caption("Privacidade: não inclua documentos, senhas ou dados sensíveis além do necessário no perfil.")
     existing = get_profiles()
     selected = st.selectbox("Perfil salvo", ["Novo perfil"] + [row["name"] for row in existing])
     saved = next((row for row in existing if row["name"] == selected), None)
@@ -340,25 +348,29 @@ with st.sidebar:
             st.error("Informe um nome e pelo menos um cargo desejado.")
         else:
             st.session_state.profile_id = save_profile(profile)
-            st.success("Perfil salvo neste computador.")
+            st.session_state.last_saved_profile_name = profile["name"]
+            st.success("Perfil salvo no banco de dados desta instalação.")
 
-profile_id = st.session_state.get("profile_id") or (saved["id"] if saved else None)
-if not profile_id and profile["name"]:
-    profile_id = save_profile(profile)
-    st.session_state.profile_id = profile_id
+# Não recria automaticamente perfis excluídos: novos perfis precisam ser salvos pelo usuário.
+profile_id = saved["id"] if saved else (
+    st.session_state.get("profile_id")
+    if st.session_state.get("last_saved_profile_name") == profile["name"]
+    else None
+)
 
 # Em hospedagens, este catálogo é atualizado diariamente pelo GitHub Actions.
 public_feed = load_public_feed()
 if profile_id and public_feed:
     store_jobs(profile_id, public_feed, profile)
 
-tab_find, tab_board, tab_sources, tab_help, tab_support = st.tabs(
+tab_find, tab_board, tab_sources, tab_help, tab_support, tab_terms = st.tabs(
     [
         ":material/manage_search: Agente de vagas",
         ":material/work: Vagas encontradas",
         ":material/health_and_safety: Fontes de saúde",
         ":material/help: Ajuda simples",
         ":material/volunteer_activism: Apoie o projeto",
+        ":material/policy: Termos e privacidade",
     ]
 )
 
@@ -468,9 +480,88 @@ with tab_support:
         st.code("c15b0dc5-808e-4b1b-aa90-6ff25ae1c0d9", language=None)
         st.caption("Chave PIX aleatória · Central de Vagas")
         st.info(
-            "Apoio opcional. Nenhuma funcionalidade do sistema depende de doação.",
+            "PIX voluntário: não é compra, não prevê reembolso e não concede benefícios obrigatórios ou funcionalidades exclusivas.",
             icon=":material/volunteer_activism:",
         )
+
+with tab_terms:
+    st.subheader("Termos e privacidade")
+    st.caption("Condições de uso, limites do serviço e cuidados com os dados cadastrados.")
+    st.warning(
+        "Não inclua documentos, senhas ou dados sensíveis além do necessário no perfil.",
+        icon=":material/security:",
+    )
+    st.markdown("""
+#### Finalidade e limites
+A Central de Vagas **apenas reúne e organiza oportunidades divulgadas publicamente**.
+As vagas podem ser alteradas, preenchidas ou removidas pelas fontes originais.
+O sistema **não garante contratação nem disponibilidade** de qualquer oportunidade.
+
+#### Currículos e candidaturas
+O sistema **não envia currículos, inscrições ou candidaturas automaticamente** e não
+preenche formulários de contratação. O usuário decide se deseja se candidatar ao
+acessar a página original da vaga.
+
+#### Dados do perfil
+Os perfis e o histórico de vagas ficam no **banco de dados utilizado pela aplicação**
+(`data/central_vagas.sqlite3` na instalação padrão). Em uso local, esse banco fica no
+computador que executa o aplicativo; em uma versão hospedada, pode ficar no servidor.
+O usuário é responsável pelos dados informados e por proteger o acesso ao ambiente.
+
+#### Links e conteúdos de terceiros
+Os links, anúncios e descrições das vagas pertencem às **fontes originais**.
+Os respectivos responsáveis controlam as informações publicadas e suas atualizações.
+
+#### Apoio voluntário por PIX
+O PIX é um **apoio inteiramente voluntário** ao projeto. Não é uma compra, **não prevê
+reembolso** e não é necessário para acessar vagas, usar funcionalidades ou receber
+qualquer benefício do sistema.
+
+#### Remoção de dados
+Para remover seus dados deste banco, **exclua o perfil salvo** usando a opção abaixo.
+Isso também remove o histórico e os status das vagas associados ao perfil nesta
+instalação. Para limpar todos os dados de uma instalação local sob seu controle,
+encerre o aplicativo e exclua o arquivo `data/central_vagas.sqlite3`; ele será
+recriado vazio na próxima execução. **Limpar apenas o cache do navegador não exclui
+os dados do banco**, especialmente quando o app está hospedado. A exclusão não
+atinge eventuais cópias de segurança ou sites externos.
+""")
+
+    if st.session_state.pop("reset_privacy_delete", False):
+        st.session_state["privacy_delete_target"] = None
+        st.session_state["privacy_delete_confirm"] = False
+    if deleted_message := st.session_state.pop("privacy_delete_message", None):
+        st.success(deleted_message)
+
+    with st.expander("Excluir perfil salvo e histórico de vagas"):
+        stored_profiles = get_profiles()
+        if not stored_profiles:
+            st.info("Nenhum perfil salvo neste banco de dados.")
+        else:
+            profile_names = {row["id"]: row["name"] for row in stored_profiles}
+            target_profile = st.selectbox(
+                "Perfil a excluir",
+                [None, *profile_names],
+                format_func=lambda key: profile_names.get(key, "Selecione um perfil"),
+                key="privacy_delete_target",
+            )
+            confirmed = st.checkbox(
+                "Confirmo a exclusão permanente deste perfil e do histórico associado neste banco.",
+                key="privacy_delete_confirm",
+            )
+            if st.button(
+                "Excluir perfil e histórico",
+                key="privacy_delete_button",
+                icon=":material/delete_forever:",
+                disabled=not (target_profile and confirmed),
+            ):
+                delete_profile(target_profile)
+                if target_profile == profile_id or st.session_state.get("profile_id") == target_profile:
+                    st.session_state.pop("profile_id", None)
+                    st.session_state.pop("last_saved_profile_name", None)
+                st.session_state["reset_privacy_delete"] = True
+                st.session_state["privacy_delete_message"] = "Perfil e histórico associado excluídos deste banco."
+                st.rerun()
 
 st.divider()
 version = project_version()

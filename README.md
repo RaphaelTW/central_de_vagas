@@ -37,3 +37,18 @@ O agente prioriza oportunidades publicadas para São Paulo - SP. O Grupo Fleury 
 ## Privacidade e limites
 
 O app nao se candidata, nao envia curriculos e nao tenta preencher formularios, CAPTCHAs ou areas autenticadas. Abrir a vaga leva a pessoa ao site original, onde ela decide se quer se candidatar. A pontuacao e uma ajuda de triagem, nao uma decisao automatica.
+
+## Termos e privacidade
+
+A aba **Termos e privacidade** informa os limites do serviço e permite excluir perfis salvos com seu histórico de vagas e status.
+
+- A aplicação organiza vagas públicas, mas não garante contratação nem disponibilidade das oportunidades.
+- Não envia currículos, não realiza candidaturas automaticamente e não preenche formulários de terceiros.
+- Os perfis e os status de vagas ficam no banco SQLite da instalação (`data/central_vagas.sqlite3`): no computador onde o aplicativo roda ou no servidor de uma implantação hospedada. O usuário é responsável pelo que cadastra.
+- Links e descrições pertencem às fontes originais, que podem modificar ou retirar as vagas.
+- O PIX é apoio voluntário: não representa compra, não prevê reembolso nem é exigido para usar o sistema ou obter benefícios.
+- É possível excluir um perfil e todo o histórico vinculado pela aba. Para limpar o banco inteiro de uma instalação local própria, feche o aplicativo e remova `data/central_vagas.sqlite3`; ele será recriado vazio. Apagar apenas o cache do navegador não exclui os dados do banco.
+
+**Atenção:** não inclua documentos, senhas ou dados sensíveis além do necessário no perfil.
+
+Um perfil novo só é gravado após clicar em **Salvar alterações do perfil**.
