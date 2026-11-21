@@ -224,7 +224,61 @@ def load_public_feed() -> list[dict]:
         return []
 
 
-st.set_page_config(page_title="Central de Vagas", page_icon="🔎", layout="wide")
+st.set_page_config(page_title="Central de Vagas", page_icon="assets/central-vagas-logo.png", layout="wide")
+st.html("""
+<style>
+/* Interações visíveis e acessíveis sem alterar a estrutura nativa do Streamlit. */
+.st-key-search_jobs button,
+.st-key-profile_save button {
+    transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+}
+.st-key-search_jobs button:hover,
+.st-key-profile_save button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.07);
+    box-shadow: 0 10px 20px rgba(64, 150, 103, .26);
+}
+.st-key-search_jobs button:active,
+.st-key-profile_save button:active {
+    transform: translateY(0) scale(.985);
+    box-shadow: 0 2px 7px rgba(64, 150, 103, .24);
+}
+.st-key-profile_name input,
+.st-key-profile_location input,
+.st-key-profile_avoid input,
+.st-key-profile_roles textarea,
+.st-key-profile_skills textarea,
+.st-key-greenhouse_boards textarea,
+.st-key-lever_boards textarea,
+.st-key-adzuna_id input,
+.st-key-adzuna_key input {
+    transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+.st-key-profile_name input:hover,
+.st-key-profile_location input:hover,
+.st-key-profile_avoid input:hover,
+.st-key-profile_roles textarea:hover,
+.st-key-profile_skills textarea:hover,
+.st-key-greenhouse_boards textarea:hover,
+.st-key-lever_boards textarea:hover,
+.st-key-adzuna_id input:hover,
+.st-key-adzuna_key input:hover {
+    border-color: #72b98e;
+}
+.st-key-profile_name input:focus,
+.st-key-profile_location input:focus,
+.st-key-profile_avoid input:focus,
+.st-key-profile_roles textarea:focus,
+.st-key-profile_skills textarea:focus,
+.st-key-greenhouse_boards textarea:focus,
+.st-key-lever_boards textarea:focus,
+.st-key-adzuna_id input:focus,
+.st-key-adzuna_key input:focus {
+    border-color: #4b9b70;
+    box-shadow: 0 0 0 3px rgba(112, 201, 151, .28);
+}
+</style>
+""")
 DEFAULT_PROFILE = {
     "name": "Letícia Maia — Laboratório",
     "roles": ["Técnica de laboratório", "Técnica em química", "Analista de laboratório", "Técnica em toxicologia"],
@@ -235,7 +289,9 @@ DEFAULT_PROFILE = {
     "minimum_score": 55,
     "avoid": ["estágio", "internship"],
 }
-st.title("Central de Vagas")
+logo_col, title_col = st.columns([1, 12], vertical_alignment="center")
+logo_col.image("assets/central-vagas-logo.png", width=56)
+title_col.title("Central de Vagas")
 st.caption("Encontre oportunidades por perfil — para qualquer área, sem automatizar candidaturas.")
 
 with st.sidebar:
@@ -246,17 +302,17 @@ with st.sidebar:
     saved = next((row for row in existing if row["name"] == selected), None)
     # Perfil inicial extraído do currículo Profile.pdf fornecido pelo usuário.
     base = json.loads(saved["data"]) if saved else DEFAULT_PROFILE
-    name = st.text_input("Nome do perfil", value=base.get("name", ""), placeholder="Ex.: Marina — Marketing")
-    roles_raw = st.text_area("Cargos desejados (um por linha)", value="\n".join(base.get("roles", [])), placeholder="Analista de Marketing\nSocial Media")
-    skills_raw = st.text_area("Habilidades (uma por linha)", value="\n".join(base.get("skills", [])), placeholder="SEO\nGoogle Analytics\nCanva")
-    location = st.text_input("Cidade/região preferida", value=base.get("location", "Brasil"))
+    name = st.text_input("Nome do perfil", value=base.get("name", ""), placeholder="Ex.: Marina — Marketing", key="profile_name")
+    roles_raw = st.text_area("Cargos desejados (um por linha)", value="\n".join(base.get("roles", [])), placeholder="Analista de Marketing\nSocial Media", key="profile_roles")
+    skills_raw = st.text_area("Habilidades (uma por linha)", value="\n".join(base.get("skills", [])), placeholder="SEO\nGoogle Analytics\nCanva", key="profile_skills")
+    location = st.text_input("Cidade/região preferida", value=base.get("location", "Brasil"), key="profile_location")
     country = st.selectbox("País para Adzuna", ["br", "pt", "us", "gb"], index=["br", "pt", "us", "gb"].index(base.get("country", "br")))
     remote_only = st.checkbox("Somente remoto", value=base.get("remote_only", False))
     minimum = st.slider("Compatibilidade mínima", 20, 95, base.get("minimum_score", 55), 5)
-    avoid_raw = st.text_input("Excluir títulos contendo", value=", ".join(base.get("avoid", ["estágio"])))
+    avoid_raw = st.text_input("Excluir títulos contendo", value=", ".join(base.get("avoid", ["estágio"])), key="profile_avoid")
     profile = {"name": name.strip(), "roles": lines(roles_raw), "skills": lines(skills_raw), "location": location.strip(), "country": country,
                "remote_only": remote_only, "minimum_score": minimum, "avoid": [x.strip() for x in avoid_raw.split(",") if x.strip()]}
-    if st.button("Salvar alterações do perfil", width="stretch", icon=":material/save:"):
+    if st.button("Salvar alterações do perfil", width="stretch", icon=":material/save:", key="profile_save"):
         if not profile["name"] or not profile["roles"]:
             st.error("Informe um nome e pelo menos um cargo desejado.")
         else:
