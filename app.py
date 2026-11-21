@@ -304,14 +304,18 @@ with tab_find:
             all_jobs, errors = [], []
             sources = [("Grupo Fleury", lambda: fetch_fleury()), ("Dasa, Eurofarma e Rede D'Or", lambda: fetch_gupy_boards()), ("Remotive", lambda: fetch_remotive(limit)), ("Greenhouse", lambda: fetch_greenhouse(lines(greenhouse), limit)), ("Lever", lambda: fetch_lever(lines(lever), limit))]
             if adzuna_id and adzuna_key: sources.append(("Adzuna", lambda: fetch_adzuna(profile, adzuna_id, adzuna_key, limit)))
-            progress = st.progress(0, text="Consultando fontes públicas…")
-            for index, (label, source) in enumerate(sources, 1):
-                try: all_jobs.extend(source())
-                except requests.RequestException as exc: errors.append(f"{label}: {exc}")
-                progress.progress(index / len(sources), text=f"Consultando {label}…")
+            with st.status("Agente iniciando a busca…", expanded=True) as search_status:
+                progress = st.progress(0, text="Consultando fontes públicas…")
+                for index, (label, source) in enumerate(sources, 1):
+                    try:
+                        all_jobs.extend(source())
+                        st.write(f":material/check_circle: {label} consultada")
+                    except requests.RequestException as exc:
+                        errors.append(f"{label}: {exc}")
+                    progress.progress(index / len(sources), text=f"Consultando {label}…")
+                search_status.update(label="Busca concluída", state="complete", expanded=False)
             unique = {job["key"]: job for job in all_jobs}
             total, compatible = store_jobs(profile_id, list(unique.values()), profile)
-            progress.empty()
             st.success(f"Pronto: encontrei {total} vagas para São Paulo - SP, entre {len(unique)} vagas consultadas. {compatible} ficaram no topo como mais compatíveis.")
             st.info("Abra a aba **Vagas encontradas** para ver todas as oportunidades, inclusive as de baixa compatibilidade.")
             for error in errors: st.warning(error)

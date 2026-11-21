@@ -1,11 +1,4 @@
 [theme]
-base = "light"
-primaryColor = "#0b6e4f"
-backgroundColor = "#f7faf8"
-secondaryBackgroundColor = "#ffffff"
-textColor = "#172b24"
-linkColor = "#075b42"
-borderColor = "#c9d8d0"
 font = "sans-serif"
 headingFont = "sans-serif"
 baseRadius = "medium"
@@ -14,7 +7,15 @@ showSidebarBorder = true
 paddingTop = "1.5rem"
 paddingBottom = "2rem"
 
-[theme.sidebar]
+[theme.light]
+primaryColor = "#0b6e4f"
+backgroundColor = "#f7faf8"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#172b24"
+linkColor = "#075b42"
+borderColor = "#c9d8d0"
+
+[theme.light.sidebar]
 backgroundColor = "#edf5f0"
 secondaryBackgroundColor = "#ffffff"
 textColor = "#172b24"
@@ -23,5 +24,28 @@ linkColor = "#075b42"
 borderColor = "#c9d8d0"
 codeBackgroundColor = "#ffffff"
 codeTextColor = "#172b24"
+paddingTop = "1rem"
+paddingBottom = "1.5rem"
+
+[theme.dark]
+primaryColor = "#00a878"
+backgroundColor = "#06110e"
+secondaryBackgroundColor = "#0d1d18"
+textColor = "#e7fff5"
+linkColor = "#57f3bf"
+borderColor = "#1c493a"
+greenColor = "#00f5a0"
+blueColor = "#38d9ff"
+violetColor = "#bb86fc"
+
+[theme.dark.sidebar]
+backgroundColor = "#081713"
+secondaryBackgroundColor = "#10261f"
+textColor = "#e7fff5"
+primaryColor = "#00a878"
+linkColor = "#57f3bf"
+borderColor = "#1c493a"
+codeBackgroundColor = "#10261f"
+codeTextColor = "#e7fff5"
 paddingTop = "1rem"
 paddingBottom = "1.5rem"
