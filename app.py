@@ -14,6 +14,8 @@ from typing import Iterable
 import requests
 import streamlit as st
 
+from health_sources import HEALTH_SOURCE_CATALOG, fetch_gupy_boards
+
 ROOT = Path(__file__).parent
 DATA = ROOT / "data"
 DB = DATA / "central_vagas.sqlite3"
@@ -189,7 +191,8 @@ def is_preferred_location(job: dict | sqlite3.Row, profile: dict) -> bool:
     if not wanted:
         return True
     if "sao paulo" in wanted:
-        return "sao paulo" in place or bool(re.search(r"\bsp\b", place))
+        city = place.split(",", 1)[0].strip()
+        return city == "sao paulo"
     return wanted in place
 
 
@@ -254,7 +257,7 @@ if not profile_id and profile["name"]:
     profile_id = save_profile(profile)
     st.session_state.profile_id = profile_id
 
-tab_find, tab_board, tab_help = st.tabs(["Agente de vagas", "Vagas encontradas", "Ajuda simples"])
+tab_find, tab_board, tab_sources, tab_help = st.tabs(["Agente de vagas", "Vagas encontradas", "Fontes de saúde", "Ajuda simples"])
 
 with tab_find:
     st.subheader("Agente de vagas pronto")
@@ -283,7 +286,7 @@ with tab_find:
             st.error("Salve ou selecione um perfil com cargos desejados antes de buscar.")
         else:
             all_jobs, errors = [], []
-            sources = [("Grupo Fleury", lambda: fetch_fleury()), ("Remotive", lambda: fetch_remotive(limit)), ("Greenhouse", lambda: fetch_greenhouse(lines(greenhouse), limit)), ("Lever", lambda: fetch_lever(lines(lever), limit))]
+            sources = [("Grupo Fleury", lambda: fetch_fleury()), ("Dasa, Eurofarma e Rede D'Or", lambda: fetch_gupy_boards()), ("Remotive", lambda: fetch_remotive(limit)), ("Greenhouse", lambda: fetch_greenhouse(lines(greenhouse), limit)), ("Lever", lambda: fetch_lever(lines(lever), limit))]
             if adzuna_id and adzuna_key: sources.append(("Adzuna", lambda: fetch_adzuna(profile, adzuna_id, adzuna_key, limit)))
             progress = st.progress(0, text="Consultando fontes públicas…")
             for index, (label, source) in enumerate(sources, 1):
@@ -323,6 +326,19 @@ with tab_board:
                 if new_status != row["status"]:
                     with db() as conn: conn.execute("UPDATE jobs SET status=? WHERE profile_id=? AND job_key=?", (new_status, profile_id, row["job_key"]))
                     st.rerun()
+
+with tab_sources:
+    st.subheader("Rede de fontes em saúde")
+    st.caption("O agente consulta automaticamente as fontes públicas compatíveis. As demais ficam catalogadas para integração quando houver um feed público estável; assim não tentamos burlar logins, CAPTCHAs ou portais privados.")
+    automated = sum(status == "Automática" for _, _, status in HEALTH_SOURCE_CATALOG)
+    st.metric("Fontes catalogadas", len(HEALTH_SOURCE_CATALOG), delta=f"{automated} automatizadas")
+    groups: dict[str, list[tuple[str, str]]] = {}
+    for category, name, status in HEALTH_SOURCE_CATALOG:
+        groups.setdefault(category, []).append((name, status))
+    for category, entries in groups.items():
+        with st.expander(category, expanded=True):
+            for name, status in entries:
+                st.write(f":material/check_circle: **{name}** - {status}")
 
 with tab_help:
     st.markdown("""### Uso em dois passos

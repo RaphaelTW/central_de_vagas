@@ -11,6 +11,8 @@ from pathlib import Path
 
 import requests
 
+from health_sources import fetch_gupy_boards
+
 ROOT = Path(__file__).parent
 DATA = ROOT / "data"
 DB = DATA / "central_vagas.sqlite3"
@@ -96,7 +98,7 @@ def main() -> None:
     with connect() as conn:
         profile_id, profile = get_profile(conn)
         before = {row[0] for row in conn.execute("SELECT job_key FROM jobs WHERE profile_id=?", (profile_id,))}
-        jobs = fetch_fleury()
+        jobs = fetch_fleury() + list(fetch_gupy_boards())
         new_count = 0
         for job in jobs:
             value, reasons = score(job, profile)

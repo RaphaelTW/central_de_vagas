@@ -5,4 +5,4 @@ __pycache__/
 data/*.sqlite3
 data/*.log
 data/uploads/
-tmp_fleury.html
+tmp_*.html

@@ -5,7 +5,7 @@ Aplicacao local e multi-perfil para encontrar vagas de acordo com cada pessoa. E
 ## O que faz
 
 - Cadastro simples de qualquer area: cargos desejados, habilidades, localidade, modalidade e senioridade.
-- Busca Remotive (remotas), Greenhouse e Lever (empresas configuradas), e Adzuna quando houver chaves proprias.
+- Busca automática nas páginas públicas do Grupo Fleury, Dasa, Eurofarma e Rede D'Or, além de Remotive, Greenhouse e Lever (quando configurados) e Adzuna opcional.
 - Mostra por que cada vaga recebeu a nota e permite salvar status: salvar, revisar, candidatura enviada ou descartar.
 - Guarda dados localmente em `data/central_vagas.sqlite3`; nao coleta credenciais de LinkedIn, Gupy ou e-mail.
 
@@ -28,7 +28,7 @@ A atualização diária já foi instalada neste computador para as **08:00**. El
 
 ## Fontes e limites
 
-Remotive fica habilitada para vagas remotas. Greenhouse e Lever exigem o identificador publico da pagina de carreiras da empresa; informe um por linha na tela. Para usar Adzuna, crie chaves em https://developer.adzuna.com/ e informe-as em **Fontes de vagas**. As fontes podem limitar consultas, portanto use buscas pontuais, nao atualizacao continua.
+O agente prioriza oportunidades publicadas para São Paulo - SP. O Grupo Fleury cobre marcas como Fleury, a+, Hermes Pardini e Genesis. Dasa, Eurofarma e Rede D'Or são consultadas através de suas páginas públicas de carreira. A aba **Fontes de saúde** mantém o catálogo das 29 instituições prioritárias; fontes sem feed público estável ficam registradas para acompanhamento, sem contornar login, CAPTCHA ou áreas privadas.
 
 ## Privacidade e limites
 
