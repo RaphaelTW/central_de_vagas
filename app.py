@@ -334,7 +334,13 @@ if profile_id and public_feed:
     store_jobs(profile_id, public_feed, profile)
 
 tab_find, tab_board, tab_sources, tab_help, tab_support = st.tabs(
-    ["Agente de vagas", "Vagas encontradas", "Fontes de saúde", "Ajuda simples", "Apoie o projeto"]
+    [
+        ":material/manage_search: Agente de vagas",
+        ":material/work: Vagas encontradas",
+        ":material/health_and_safety: Fontes de saúde",
+        ":material/help: Ajuda simples",
+        ":material/volunteer_activism: Apoie o projeto",
+    ]
 )
 
 with tab_find:
@@ -446,3 +452,9 @@ with tab_support:
             "Apoio opcional. Nenhuma funcionalidade do sistema depende de doação.",
             icon=":material/volunteer_activism:",
         )
+
+st.divider()
+st.caption(
+    "Copyright © 2026 Central de Vagas · Feito com ❤ por "
+    "[RaphaelTW](https://github.com/RaphaelTW)"
+)
