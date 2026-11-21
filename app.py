@@ -6,6 +6,7 @@ import html
 import json
 import re
 import sqlite3
+import subprocess
 import unicodedata
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -20,6 +21,7 @@ ROOT = Path(__file__).parent
 DATA = ROOT / "data"
 DB = DATA / "central_vagas.sqlite3"
 USER_AGENT = "CentralDeVagas/1.0 (busca pessoal de oportunidades)"
+RELEASES_URL = "https://github.com/RaphaelTW/central_de_vagas/releases"
 
 
 def norm(value: str) -> str:
@@ -37,6 +39,23 @@ def clean_html(value: str) -> str:
 
 def lines(value: str) -> list[str]:
     return list(dict.fromkeys(x.strip() for x in value.splitlines() if x.strip()))
+
+
+@st.cache_data
+def project_version() -> str:
+    """Mostra sempre a tag de release mais recente quando o repositório estiver disponível."""
+    try:
+        result = subprocess.run(
+            ["git", "describe", "--tags", "--abbrev=0"],
+            cwd=ROOT,
+            capture_output=True,
+            check=True,
+            text=True,
+            timeout=2,
+        )
+        return result.stdout.strip() or "v1.3.0"
+    except (OSError, subprocess.SubprocessError):
+        return "v1.3.0"
 
 
 def db() -> sqlite3.Connection:
@@ -454,7 +473,10 @@ with tab_support:
         )
 
 st.divider()
-st.caption(
+version = project_version()
+st.markdown(
     "Copyright © 2026 Central de Vagas · Feito com ❤ por "
-    "[RaphaelTW](https://github.com/RaphaelTW)"
+    "[RaphaelTW](https://github.com/RaphaelTW) · "
+    f"[**{version}**]({RELEASES_URL})",
+    text_alignment="center",
 )
