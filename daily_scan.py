@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import re
 import sqlite3
 import unicodedata
@@ -52,9 +53,17 @@ def connect() -> sqlite3.Connection:
 
 
 def get_profile(conn: sqlite3.Connection) -> tuple[str, dict]:
-    row = conn.execute("SELECT id,data FROM profiles ORDER BY updated_at DESC LIMIT 1").fetchone()
+    row = None if os.getenv("GITHUB_ACTIONS") == "true" else conn.execute("SELECT id,data FROM profiles ORDER BY updated_at DESC LIMIT 1").fetchone()
     if not row:
-        raise RuntimeError("Abra a Central de Vagas e salve o perfil antes da primeira atualização automática.")
+        profile = {
+            "name": "Catálogo público de saúde SP",
+            "roles": ["Técnica de laboratório", "Técnica em química", "Analista de laboratório", "Técnica em toxicologia"],
+            "skills": ["HPLC", "Cromatografia líquida", "Toxicologia", "Controle de estoque", "ISO 17025"],
+            "minimum_score": 55,
+        }
+        profile_id = "public-health-sp"
+        conn.execute("INSERT OR REPLACE INTO profiles VALUES(?,?,?,?)", (profile_id, profile["name"], json.dumps(profile, ensure_ascii=False), datetime.now().isoformat(timespec="seconds")))
+        return profile_id, profile
     return row["id"], json.loads(row["data"])
 
 

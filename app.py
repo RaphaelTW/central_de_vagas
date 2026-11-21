@@ -213,6 +213,17 @@ def store_jobs(profile_id: str, jobs: list[dict], profile: dict) -> tuple[int, i
     return len(local_jobs), compatible
 
 
+@st.cache_data(ttl="10m")
+def load_public_feed() -> list[dict]:
+    path = DATA / "vagas_publicas.json"
+    if not path.exists():
+        return []
+    try:
+        return json.loads(path.read_text(encoding="utf-8")).get("jobs", [])
+    except (OSError, json.JSONDecodeError):
+        return []
+
+
 st.set_page_config(page_title="Central de Vagas", page_icon="🔎", layout="wide")
 DEFAULT_PROFILE = {
     "name": "Letícia Maia — Laboratório",
@@ -256,6 +267,11 @@ profile_id = st.session_state.get("profile_id") or (saved["id"] if saved else No
 if not profile_id and profile["name"]:
     profile_id = save_profile(profile)
     st.session_state.profile_id = profile_id
+
+# Em hospedagens, este catálogo é atualizado diariamente pelo GitHub Actions.
+public_feed = load_public_feed()
+if profile_id and public_feed:
+    store_jobs(profile_id, public_feed, profile)
 
 tab_find, tab_board, tab_sources, tab_help = st.tabs(["Agente de vagas", "Vagas encontradas", "Fontes de saúde", "Ajuda simples"])
 

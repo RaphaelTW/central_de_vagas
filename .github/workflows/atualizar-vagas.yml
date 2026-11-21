@@ -1,0 +1,38 @@
+name: Atualizar catálogo de vagas
+
+on:
+  schedule:
+    # 08:00 em Brasília (UTC-3).
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o projeto
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Consultar fontes públicas
+        run: |
+          python daily_scan.py
+          python export_public_feed.py
+
+      - name: Publicar catálogo atualizado
+        run: |
+          git config user.name "central-de-vagas[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/vagas_publicas.json
+          git diff --cached --quiet || git commit -m "chore: update public health jobs feed"
+          git push

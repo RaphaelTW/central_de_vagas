@@ -26,6 +26,8 @@ O navegador abre em `http://localhost:8501`. Para encerrar, use `Ctrl+C` no term
 
 A atualização diária já foi instalada neste computador para as **08:00**. Ela consulta as vagas públicas em São Paulo e grava apenas as novas no painel. O computador precisa estar ligado e a sessão do Windows aberta nesse horário. Para instalar novamente em outro computador, execute `instalar_atualizacao_diaria.ps1` após rodar o projeto uma vez. O registro fica em `data/daily_scan.log`.
 
+O repositório também possui o workflow **Atualizar catálogo de vagas** em GitHub Actions. Ele roda diariamente às 08:00 (Brasília), atualiza `data/vagas_publicas.json` e envia o catálogo ao repositório. Uma versão hospedada do app carrega esse arquivo automaticamente; os perfis e status pessoais continuam locais até uma futura migração para um banco em nuvem.
+
 ## Fontes e limites
 
 O agente prioriza oportunidades publicadas para São Paulo - SP. O Grupo Fleury cobre marcas como Fleury, a+, Hermes Pardini e Genesis. Dasa, Eurofarma e Rede D'Or são consultadas através de suas páginas públicas de carreira. A aba **Fontes de saúde** mantém o catálogo das 29 instituições prioritárias; fontes sem feed público estável ficam registradas para acompanhamento, sem contornar login, CAPTCHA ou áreas privadas.
