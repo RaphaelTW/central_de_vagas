@@ -151,16 +151,6 @@
       "remote": false
     },
     {
-      "key": "Grupo Fleury:Fleury:2838815",
-      "source": "Grupo Fleury",
-      "title": "Assistente de Coleta I - A+ Zona Sul",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/assistente-de-coleta-i-a-zona-sul/2838815",
-      "description": "Assistente de Coleta I - A+ Zona Sul",
-      "remote": false
-    },
-    {
       "key": "Grupo Fleury:Fleury:2838965",
       "source": "Grupo Fleury",
       "title": "Assistente de Coleta I - A+ SP",
@@ -178,26 +168,6 @@
       "location": "São Paulo, SP",
       "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/auxiliar-de-enfermagem-ii-atendimento-movel-a-sp/2839009",
       "description": "Auxiliar de Enfermagem II - Atendimento Móvel A+ SP",
-      "remote": false
-    },
-    {
-      "key": "Grupo Fleury:Fleury:2840464",
-      "source": "Grupo Fleury",
-      "title": "Tecnico de Laboratorio I - Citogenética",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/tecnico-de-laboratorio-i-citogenetica/2840464",
-      "description": "Tecnico de Laboratorio I - Citogenética",
-      "remote": false
-    },
-    {
-      "key": "Grupo Fleury:Fleury:2840553",
-      "source": "Grupo Fleury",
-      "title": "Operador de Atendimento II - Unidade Fleury Zona Sul",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/operador-de-atendimento-ii-unidade-fleury-zona-sul/2840553",
-      "description": "Operador de Atendimento II - Unidade Fleury Zona Sul",
       "remote": false
     },
     {
@@ -541,6 +511,16 @@
       "remote": false
     },
     {
+      "key": "Grupo Fleury:Fleury:2843061",
+      "source": "Grupo Fleury",
+      "title": "Vaga Teste Projeto Aiia - Assistente de Coleta",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/vaga-teste-projeto-aiia-assistente-de-coleta/2843061",
+      "description": "Vaga Teste Projeto Aiia - Assistente de Coleta",
+      "remote": false
+    },
+    {
       "key": "Grupo Fleury:Fleury:2843063",
       "source": "Grupo Fleury",
       "title": "Analista de Cd - (Ressonância Magnética) - Hermes Pardini Tatuapé",
@@ -691,6 +671,36 @@
       "remote": false
     },
     {
+      "key": "Grupo Fleury:Fleury:2844126",
+      "source": "Grupo Fleury",
+      "title": "Operador de Atendimento (Recepcionista) - A+ Queiroz Filho",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/operador-de-atendimento-recepcionista-a-queiroz-filho/2844126",
+      "description": "Operador de Atendimento (Recepcionista) - A+ Queiroz Filho",
+      "remote": false
+    },
+    {
+      "key": "Grupo Fleury:Fleury:2844145",
+      "source": "Grupo Fleury",
+      "title": "Pessoa Técnica de Segurança do Trabalho (Genesis Genomics)",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/pessoa-tecnica-de-seguranca-do-trabalho-genesis-genomics/2844145",
+      "description": "Pessoa Técnica de Segurança do Trabalho (Genesis Genomics)",
+      "remote": false
+    },
+    {
+      "key": "Grupo Fleury:Fleury:2844240",
+      "source": "Grupo Fleury",
+      "title": "Assistente de Coleta I - Novamed Sul",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/assistente-de-coleta-i-novamed-sul/2844240",
+      "description": "Assistente de Coleta I - Novamed Sul",
+      "remote": false
+    },
+    {
       "key": "Gupy:Dasa:12097813",
       "source": "Grupo Fleury",
       "title": "Supervisor (a) de Operações de Unidade - São Paulo",
@@ -718,6 +728,16 @@
       "location": "São Paulo, SP",
       "url": "https://dasaatendimento.gupy.io/",
       "description": "Concierge Bilingue | Unidade Alta Panamby",
+      "remote": false
+    },
+    {
+      "key": "Gupy:Eurofarma:12484621",
+      "source": "Grupo Fleury",
+      "title": "Analista de Remuneração Senior",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://eurofarma.gupy.io/",
+      "description": "Analista de Remuneração Senior",
       "remote": false
     },
     {
@@ -2038,6 +2058,16 @@
       "location": "São Paulo, SP",
       "url": "https://rededor.gupy.io/",
       "description": "Técnico de Enfermagem CME | São Luiz Itaim",
+      "remote": false
+    },
+    {
+      "key": "Gupy:Rede D'Or:11989522",
+      "source": "Grupo Fleury",
+      "title": "Técnico(a) de Enfermagem | Setores SADT Ressonância Magnética + Endoscopia + Ultrasonografia | São Luiz Morumbi",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://rededor.gupy.io/",
+      "description": "Técnico(a) de Enfermagem | Setores SADT Ressonância Magnética + Endoscopia + Ultrasonografia | São Luiz Morumbi",
       "remote": false
     },
     {
@@ -3751,6 +3781,16 @@
       "remote": false
     },
     {
+      "key": "Gupy:Rede D'Or:12532485",
+      "source": "Grupo Fleury",
+      "title": "Auxiliar de Enfermagem | CME | São Luiz Morumbi",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://rededor.gupy.io/",
+      "description": "Auxiliar de Enfermagem | CME | São Luiz Morumbi",
+      "remote": false
+    },
+    {
       "key": "Gupy:Rede D'Or:12550245",
       "source": "Grupo Fleury",
       "title": "Auxiliar de Farmácia l Morumbi",
@@ -3848,16 +3888,6 @@
       "location": "São Paulo, SP",
       "url": "https://rededor.gupy.io/",
       "description": "Farmacêutico l Morumbi",
-      "remote": false
-    },
-    {
-      "key": "Gupy:Rede D'Or:12570051",
-      "source": "Grupo Fleury",
-      "title": "Auxiliar Administrativo | Hospital Santa Isabel",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://rededor.gupy.io/",
-      "description": "Auxiliar Administrativo | Hospital Santa Isabel",
       "remote": false
     },
     {
@@ -4728,6 +4758,16 @@
       "location": "São Paulo, SP",
       "url": "https://rededor.gupy.io/",
       "description": "Técnico de Segurança do Trabalho l SESMT l SANTA ISABEL",
+      "remote": false
+    },
+    {
+      "key": "Gupy:Rede D'Or:12773355",
+      "source": "Grupo Fleury",
+      "title": "Analista de dados Pleno | Jurídico | Corporativo São Paulo",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://rededor.gupy.io/",
+      "description": "Analista de dados Pleno | Jurídico | Corporativo São Paulo",
       "remote": false
     },
     {
