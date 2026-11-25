@@ -541,13 +541,13 @@
       "remote": false
     },
     {
-      "key": "Grupo Fleury:Fleury:2843532",
+      "key": "Grupo Fleury:Fleury:2843524",
       "source": "Grupo Fleury",
-      "title": "Enfermeiro (a) Assistencial - Hermes Pardini",
+      "title": "Especialista Laboratorial III - Automação",
       "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
       "location": "São Paulo, SP",
-      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/enfermeiro-a-assistencial-hermes-pardini/2843532",
-      "description": "Enfermeiro (a) Assistencial - Hermes Pardini",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/especialista-laboratorial-iii-automacao/2843524",
+      "description": "Especialista Laboratorial III - Automação",
       "remote": false
     },
     {
@@ -678,6 +678,16 @@
       "location": "São Paulo, SP",
       "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/assistente-de-coleta-i-novamed-paulista/2844295",
       "description": "Assistente de Coleta I - Novamed Paulista",
+      "remote": false
+    },
+    {
+      "key": "Grupo Fleury:Fleury:2844701",
+      "source": "Grupo Fleury",
+      "title": "Técnico de Anatomia Patológica",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/tecnico-de-anatomia-patologica/2844701",
+      "description": "Técnico de Anatomia Patológica",
       "remote": false
     },
     {
@@ -3881,16 +3891,6 @@
       "remote": false
     },
     {
-      "key": "Gupy:Rede D'Or:12597704",
-      "source": "Grupo Fleury",
-      "title": "Líder de Higienização | Hospital São Luiz Morumbi",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://rededor.gupy.io/",
-      "description": "Líder de Higienização | Hospital São Luiz Morumbi",
-      "remote": false
-    },
-    {
       "key": "Gupy:Rede D'Or:12617135",
       "source": "Grupo Fleury",
       "title": "Técnico Engenharia Clinica | Santa Cecilia",
@@ -4891,16 +4891,6 @@
       "remote": false
     },
     {
-      "key": "Gupy:Rede D'Or:12801477",
-      "source": "Grupo Fleury",
-      "title": "Enfermeiro(a) Rotina | Setor UNI Adulto | Unidade São Luiz Jabaquara",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://rededor.gupy.io/",
-      "description": "Enfermeiro(a) Rotina | Setor UNI Adulto | Unidade São Luiz Jabaquara",
-      "remote": false
-    },
-    {
       "key": "Gupy:Rede D'Or:12805054",
       "source": "Grupo Fleury",
       "title": "Copeiro | Jabaquara",
@@ -5468,6 +5458,16 @@
       "location": "São Paulo, SP",
       "url": "https://rededor.gupy.io/",
       "description": "Enfermeiro(a) | Setor Emergência Adulta | Hospital São Luiz Morumbi",
+      "remote": false
+    },
+    {
+      "key": "Gupy:Rede D'Or:12943827",
+      "source": "Grupo Fleury",
+      "title": "Líder de Farmácia l Farmácia l Vila Nova Star",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://rededor.gupy.io/",
+      "description": "Líder de Farmácia l Farmácia l Vila Nova Star",
       "remote": false
     }
   ]
