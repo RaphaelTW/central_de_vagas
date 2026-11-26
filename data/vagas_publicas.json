@@ -551,6 +551,16 @@
       "remote": false
     },
     {
+      "key": "Grupo Fleury:Fleury:2843532",
+      "source": "Grupo Fleury",
+      "title": "Enfermeiro (a) Assistencial - Hermes Pardini",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/enfermeiro-a-assistencial-hermes-pardini/2843532",
+      "description": "Enfermeiro (a) Assistencial - Hermes Pardini",
+      "remote": false
+    },
+    {
       "key": "Grupo Fleury:Fleury:2843567",
       "source": "Grupo Fleury",
       "title": "Assistente de Coleta I - Hospital (Zona Leste)",
@@ -681,13 +691,13 @@
       "remote": false
     },
     {
-      "key": "Grupo Fleury:Fleury:2844701",
+      "key": "Grupo Fleury:Fleury:2844719",
       "source": "Grupo Fleury",
-      "title": "Técnico de Anatomia Patológica",
+      "title": "Analista de Inteligência Médica II - Vita",
       "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
       "location": "São Paulo, SP",
-      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/tecnico-de-anatomia-patologica/2844701",
-      "description": "Técnico de Anatomia Patológica",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/analista-de-inteligencia-medica-ii-vita/2844719",
+      "description": "Analista de Inteligência Médica II - Vita",
       "remote": false
     },
     {
@@ -1068,16 +1078,6 @@
       "location": "São Paulo, SP",
       "url": "https://rededor.gupy.io/",
       "description": "Eletricista | Hospital Vila Nova Star São Paulo",
-      "remote": false
-    },
-    {
-      "key": "Gupy:Rede D'Or:11546993",
-      "source": "Grupo Fleury",
-      "title": "Especialista de RH | Business Partner | Unidade Hospitalar | São Paulo",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://rededor.gupy.io/",
-      "description": "Especialista de RH | Business Partner | Unidade Hospitalar | São Paulo",
       "remote": false
     },
     {
@@ -1478,6 +1478,16 @@
       "location": "São Paulo, SP",
       "url": "https://rededor.gupy.io/",
       "description": "Auxiliar de Suprimentos | Zona Sul",
+      "remote": false
+    },
+    {
+      "key": "Gupy:Rede D'Or:11629283",
+      "source": "Grupo Fleury",
+      "title": "Analista de Regras e Cadastros Pl | Corporativo São Paulo",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://rededor.gupy.io/",
+      "description": "Analista de Regras e Cadastros Pl | Corporativo São Paulo",
       "remote": false
     },
     {
@@ -4701,16 +4711,6 @@
       "remote": false
     },
     {
-      "key": "Gupy:Rede D'Or:12773355",
-      "source": "Grupo Fleury",
-      "title": "Analista de dados Pleno | Jurídico | Corporativo São Paulo",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://rededor.gupy.io/",
-      "description": "Analista de dados Pleno | Jurídico | Corporativo São Paulo",
-      "remote": false
-    },
-    {
       "key": "Gupy:Rede D'Or:12774955",
       "source": "Grupo Fleury",
       "title": "Enfermeiro(a) | Setor UNI Pediatrica | Unidade Hospital da Criança",
@@ -4881,16 +4881,6 @@
       "remote": false
     },
     {
-      "key": "Gupy:Rede D'Or:12800821",
-      "source": "Grupo Fleury",
-      "title": "Supervisor(a) de Enfermagem | Setor UNI Adulto | Unidade São Luiz Jabaquara",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://rededor.gupy.io/",
-      "description": "Supervisor(a) de Enfermagem | Setor UNI Adulto | Unidade São Luiz Jabaquara",
-      "remote": false
-    },
-    {
       "key": "Gupy:Rede D'Or:12805054",
       "source": "Grupo Fleury",
       "title": "Copeiro | Jabaquara",
@@ -5018,16 +5008,6 @@
       "location": "São Paulo, SP",
       "url": "https://rededor.gupy.io/",
       "description": "Enfermeiro Auditor l Central Autorização Pré l Itaim",
-      "remote": false
-    },
-    {
-      "key": "Gupy:Rede D'Or:12841253",
-      "source": "Grupo Fleury",
-      "title": "Analista de Materiais PL | Planejamento Suprimentos | Corporativo SP",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://rededor.gupy.io/",
-      "description": "Analista de Materiais PL | Planejamento Suprimentos | Corporativo SP",
       "remote": false
     },
     {
@@ -5468,6 +5448,16 @@
       "location": "São Paulo, SP",
       "url": "https://rededor.gupy.io/",
       "description": "Líder de Farmácia l Farmácia l Vila Nova Star",
+      "remote": false
+    },
+    {
+      "key": "Gupy:Rede D'Or:12946088",
+      "source": "Grupo Fleury",
+      "title": "Técnico de Enfermagem | UTI Pediátrica | Morumbi",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://rededor.gupy.io/",
+      "description": "Técnico de Enfermagem | UTI Pediátrica | Morumbi",
       "remote": false
     }
   ]
