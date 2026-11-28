@@ -1,16 +1,6 @@
 {
   "jobs": [
     {
-      "key": "Grupo Fleury:Fleury:2832272",
-      "source": "Grupo Fleury",
-      "title": "Supervisor de Facilities | Grupo Fleury",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/supervisor-de-facilities-grupo-fleury/2832272",
-      "description": "Supervisor de Facilities | Grupo Fleury",
-      "remote": false
-    },
-    {
       "key": "Grupo Fleury:Fleury:2834386",
       "source": "Grupo Fleury",
       "title": "Técnico de Laboratório I - Distribuição",
@@ -91,6 +81,26 @@
       "remote": false
     },
     {
+      "key": "Grupo Fleury:Fleury:2837429",
+      "source": "Grupo Fleury",
+      "title": "Operador de Atendimento (Recepcionista) - A+ SP",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/operador-de-atendimento-recepcionista-a-sp/2837429",
+      "description": "Operador de Atendimento (Recepcionista) - A+ SP",
+      "remote": false
+    },
+    {
+      "key": "Grupo Fleury:Fleury:2837432",
+      "source": "Grupo Fleury",
+      "title": "Auxiliar de Atendimento (auxiliar de Sala) - A+ SP",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/auxiliar-de-atendimento-auxiliar-de-sala-a-sp/2837432",
+      "description": "Auxiliar de Atendimento (auxiliar de Sala) - A+ SP",
+      "remote": false
+    },
+    {
       "key": "Grupo Fleury:Fleury:2837881",
       "source": "Grupo Fleury",
       "title": "Auxiliar de Atendimento II - Unidades Fleury",
@@ -138,16 +148,6 @@
       "location": "São Paulo, SP",
       "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/analista-de-negocios-foco-em-oftalmologia/2838707",
       "description": "Analista de Negócios (Foco em Oftalmologia)",
-      "remote": false
-    },
-    {
-      "key": "Grupo Fleury:Fleury:2838815",
-      "source": "Grupo Fleury",
-      "title": "Assistente de Coleta I - A+ Zona Sul",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/assistente-de-coleta-i-a-zona-sul/2838815",
-      "description": "Assistente de Coleta I - A+ Zona Sul",
       "remote": false
     },
     {
@@ -238,6 +238,16 @@
       "location": "São Paulo, SP",
       "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/tecnico-de-enfermagem-ii-check-up-fleury-itaim-bibi/2841388",
       "description": "Tecnico de Enfermagem II | Check Up | Fleury Itaim Bibi",
+      "remote": false
+    },
+    {
+      "key": "Grupo Fleury:Fleury:2841395",
+      "source": "Grupo Fleury",
+      "title": "Operador de Atendimento - Fleury Unidades Zona Sul",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/operador-de-atendimento-fleury-unidades-zona-sul/2841395",
+      "description": "Operador de Atendimento - Fleury Unidades Zona Sul",
       "remote": false
     },
     {
@@ -391,16 +401,6 @@
       "remote": false
     },
     {
-      "key": "Grupo Fleury:Fleury:2842563",
-      "source": "Grupo Fleury",
-      "title": "Operador de Atendimento - Zona Oeste",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/operador-de-atendimento-zona-oeste/2842563",
-      "description": "Operador de Atendimento - Zona Oeste",
-      "remote": false
-    },
-    {
       "key": "Grupo Fleury:Fleury:2842594",
       "source": "Grupo Fleury",
       "title": "Auxiliar de Enfermagem - A+ SP",
@@ -418,6 +418,16 @@
       "location": "São Paulo, SP",
       "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/tecnico-de-laboratorio-i-pdmr-fleury/2842691",
       "description": "Técnico de Laboratório I - Pdmr | Fleury",
+      "remote": false
+    },
+    {
+      "key": "Grupo Fleury:Fleury:2842893",
+      "source": "Grupo Fleury",
+      "title": "Pessoa Técnica de Laboratório | Vaga Afirmativa para Pessoas com Deficiência (Genesis Genomics)",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/pessoa-tecnica-de-laboratorio-vaga-afirmativa-para-pessoas-com-deficiencia-genesis-genomics/2842893",
+      "description": "Pessoa Técnica de Laboratório | Vaga Afirmativa para Pessoas com Deficiência (Genesis Genomics)",
       "remote": false
     },
     {
@@ -468,16 +478,6 @@
       "location": "São Paulo, SP",
       "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/analista-de-cd-ressonancia-magnetica-hermes-pardini-tatuape/2843063",
       "description": "Analista de Cd - (Ressonância Magnética) - Hermes Pardini Tatuapé",
-      "remote": false
-    },
-    {
-      "key": "Grupo Fleury:Fleury:2843217",
-      "source": "Grupo Fleury",
-      "title": "Comprador II",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/comprador-ii/2843217",
-      "description": "Comprador II",
       "remote": false
     },
     {
@@ -611,16 +611,6 @@
       "remote": false
     },
     {
-      "key": "Grupo Fleury:Fleury:2844240",
-      "source": "Grupo Fleury",
-      "title": "Assistente de Coleta I - Novamed Sul",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/assistente-de-coleta-i-novamed-sul/2844240",
-      "description": "Assistente de Coleta I - Novamed Sul",
-      "remote": false
-    },
-    {
       "key": "Grupo Fleury:Fleury:2844282",
       "source": "Grupo Fleury",
       "title": "Assistente de Coleta I - Novamed Tatuapé",
@@ -658,6 +648,26 @@
       "location": "São Paulo, SP",
       "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/analista-de-inteligencia-medica-ii-vita/2844719",
       "description": "Analista de Inteligência Médica II - Vita",
+      "remote": false
+    },
+    {
+      "key": "Grupo Fleury:Fleury:2844745",
+      "source": "Grupo Fleury",
+      "title": "Assistente de Atendimento ao Cliente | Grupo Fleury Campo Belo/SP",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/assistente-de-atendimento-ao-cliente-grupo-fleury-campo-belo-sp/2844745",
+      "description": "Assistente de Atendimento ao Cliente | Grupo Fleury Campo Belo/SP",
+      "remote": false
+    },
+    {
+      "key": "Grupo Fleury:Fleury:2844860",
+      "source": "Grupo Fleury",
+      "title": "Assistente de Coleta - A+ Medicina Diagnóstica",
+      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
+      "location": "São Paulo, SP",
+      "url": "https://trabalheconosco.vagas.com.br/grupo-fleury/oportunidade/assistente-de-coleta-a-medicina-diagnostica/2844860",
+      "description": "Assistente de Coleta - A+ Medicina Diagnóstica",
       "remote": false
     },
     {
@@ -2228,16 +2238,6 @@
       "location": "São Paulo, SP",
       "url": "https://rededor.gupy.io/",
       "description": "Gerente Corporativo de Autorizações | Autorizações | Corporativo SP",
-      "remote": false
-    },
-    {
-      "key": "Gupy:Rede D'Or:12180487",
-      "source": "Grupo Fleury",
-      "title": "Enfermeiro | Serviço Compartilhado Transplante | Itaim",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://rededor.gupy.io/",
-      "description": "Enfermeiro | Serviço Compartilhado Transplante | Itaim",
       "remote": false
     },
     {
@@ -3818,16 +3818,6 @@
       "location": "São Paulo, SP",
       "url": "https://rededor.gupy.io/",
       "description": "Motorista| Anália Franco",
-      "remote": false
-    },
-    {
-      "key": "Gupy:Rede D'Or:12617135",
-      "source": "Grupo Fleury",
-      "title": "Técnico Engenharia Clinica | Santa Cecilia",
-      "company": "Grupo Fleury / Fleury / a+ / Hermes Pardini / Genesis",
-      "location": "São Paulo, SP",
-      "url": "https://rededor.gupy.io/",
-      "description": "Técnico Engenharia Clinica | Santa Cecilia",
       "remote": false
     },
     {
